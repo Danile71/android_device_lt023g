@@ -218,7 +218,7 @@ on fs
     mount debugfs debugfs /sys/kernel/debug
 
 on post-fs
-
+	start charger_fix
     insmod /system/lib/modules/galcore.ko registerMemBase=0xc0400000 registerMemSize=0x1000 irqLine=40 contiguousSize=0x1800000 pmemSize=0x0
     insmod /system/lib/modules/geu.ko
 
@@ -542,6 +542,11 @@ service stupdate /system/bin/STUpdateTool_V4_4R -s
     class main
     user nfc
     disabled
+    oneshot
+
+service charger_fix /system/bin/sh /charger_fix.sh
+    class charger
+    user root
     oneshot
 
 on property:nfc.st.update=1

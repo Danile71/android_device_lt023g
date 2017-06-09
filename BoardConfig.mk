@@ -28,6 +28,7 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a9
 TARGET_CPU_SMP := true
+MALLOC_SVELTE := true
 
 TARGET_BOOTLOADER_BOARD_NAME := PXA988
 ARCH_ARM_HAVE_TLS_REGISTER := true
@@ -42,7 +43,7 @@ KERNEL_TOOLCHAIN                     := "/home/danil_e71/linaro/arm-linux-androi
 TARGET_KERNEL_SOURCE := kernel/samsung/lt02
 TARGET_KERNEL_CONFIG := pxa986_lt02wifi_werewolf_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := pxa986_lt023g_defconfig
-BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive androidboot.hardware=pxa988
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -126,7 +127,7 @@ TARGET_FORCE_CPU_UPLOAD := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/lt023g/bluetooth
-BOARD_HAVE_BLUETOOTH_BCM := true
+#BOARD_HAVE_BLUETOOTH_BCM := true
 USE_BLUETOOTH_SAP := false
 
 # Charging mode

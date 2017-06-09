@@ -18,6 +18,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=128m \
     ro.carrier=wifi-only
 
+# USB
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb
+
+# For userdebug builds
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.debuggable=1 \
+    persist.service.adb.enable=1
+
 # Charger
 PRODUCT_PACKAGES += \
     charger \
@@ -40,7 +51,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.pxa988.rc:root/init.pxa988.rc \
     $(LOCAL_PATH)/rootdir/init.pxa988.usb.rc:root/init.pxa988.usb.rc \
     $(LOCAL_PATH)/rootdir/init.pxa988.tel.rc:root/init.pxa988.tel.rc \
-    $(LOCAL_PATH)/rootdir/init_bsp.rc:root/init_bsp.rc \
     $(LOCAL_PATH)/rootdir/init_bsp.pxa988.rc:root/init_bsp.pxa988.rc \
     $(LOCAL_PATH)/rootdir/init_bsp.pxa988.tel.rc:root/init_bsp.pxa988.tel.rc
 

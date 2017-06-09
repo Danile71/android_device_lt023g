@@ -45,8 +45,8 @@ void init_target_properties()
 
     property_set("ro.build.fingerprint", "samsung/serranoveltexx/serranovelte:7.1/LRX22G/I9195IXXU2BPG1:user/release-keys");
     property_set("ro.build.description", "serranoveltexx-user 7.1.	 LRX22G I9195IXXU2BPG1 release-keys");
-    property_set("ro.product.model", "I9195I");
-    property_set("ro.product.device", "serranoveltexx");
+    property_set("ro.product.model", "lt023g");
+    property_set("ro.product.device", "lt023g");
    
     std::string device = property_get("ro.product.device");
     INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
