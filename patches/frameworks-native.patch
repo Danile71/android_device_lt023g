@@ -1,0 +1,18 @@
+project frameworks/native/
+diff --git a/libs/binder/IPCThreadState.cpp b/libs/binder/IPCThreadState.cpp
+index 9b5f0d7..d260069 100644
+--- a/libs/binder/IPCThreadState.cpp
++++ b/libs/binder/IPCThreadState.cpp
+@@ -352,6 +352,11 @@ status_t IPCThreadState::clearLastError()
+     return err;
+ }
+ 
++extern "C" int _ZN7android14IPCThreadState13getCallingPidEv(IPCThreadState *state) 
++{
++    return state->getCallingPid();
++}
++
+ pid_t IPCThreadState::getCallingPid() const
+ {
+     return mCallingPid;
+

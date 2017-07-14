@@ -1,3 +1,3 @@
-# android_device_samsung_serranoveltexx
+# android_device_samsung_lt023g
 
-Device tree for Samsung Galaxy S4 mini plus (I9195I)  Variant
+Device tree for Samsung Tab 3 3G
